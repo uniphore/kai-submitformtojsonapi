@@ -4,23 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Form to API</title>
+    <title>Colabo Search Analysis Demo</title>
 </head>
 <body>
     <div class="container card card-color">
         <form action="" id="sampleForm">
-            <h2>Sample Form to JSON API</h2>
+            <h2>Colabo Search Analysis - Demonstration Form</h2>
             <div class="form-row">
-                <label for="FirstName">First Name</label>
-                <input type="text" class="input-text input-text-block w-100" id="FirstName" name="FirstName">
-            </div>
-            <div class="form-row">
-                <label for="LastName">Last Name</label>
-                <input type="text" class="input-text input-text-block w-100" id="LastName" name="LastName">
-            </div>
-            <div class="form-row">
-                <label for="Email">Email</label>
-                <input type="email" class="input-text input-text-block w-100" id="Email" name="Email">
+                <label for="query">Type the search Query:</label>
+                <input type="text" class="input-text input-text-block w-100" id="message" name="message">
             </div>
             <div class="form-row mx-auto">
                 <button type="submit" class="btn-submit" id="btnSubmit">
@@ -28,6 +20,9 @@
                 </button>
             </div>
         </form>
+      </div>
+      <div class="container card card-color">
+        <pre id="result">Result will be shown here.</pre>
       </div>
       <script src="js/app.js"></script>
 </body>

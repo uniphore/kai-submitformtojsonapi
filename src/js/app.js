@@ -18,19 +18,23 @@ async function submitForm(e, form) {
     // 2.3 Build Headers
     const headers = buildHeaders();
     // 2.4 Request & Response
-    const response = await fetchService.performPostHttpRequest(`https://jsonplaceholder.typicode.com/posts`, headers, jsonFormData); // Uses JSON Placeholder
+    const response = await fetchService.performPostHttpRequest(`https://bzst2.colabo.com/api/v1/search_box/`, headers, jsonFormData); // Uses JSON Placeholder
     console.log(response);
     // 2.5 Inform user of result
-    if(response)
-        window.location = `/success.html?FirstName=${response.FirstName}&LastName=${response.LastName}&Email=${response.Email}&id=${response.id}`;
-    else
+    if(response) {
+        console.log("WORKED");
+        //window.location = `/success.html?FirstName=${response.FirstName}&LastName=${response.LastName}&Email=${response.Email}&id=${response.id}`;
+        document.getElementById("result").textContent = JSON.stringify(response, undefined, 2);
+      }
+    else {
         alert(`An error occured.`);
+      }
 }
 
 function buildHeaders(authorization = null) {
     const headers = {
         "Content-Type": "application/json",
-        "Authorization": (authorization) ? authorization : "Bearer TOKEN_MISSING"
+        "AuthorizationAWAW": (authorization) ? authorization : "Bearer TOKEN_MISSING"
     };
     return headers;
 }
