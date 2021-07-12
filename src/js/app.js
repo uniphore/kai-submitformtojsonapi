@@ -18,7 +18,7 @@ async function submitForm(e, form) {
     // 2.3 Build Headers
     const headers = buildHeaders();
     // 2.4 Request & Response
-    const response = await fetchService.performPostHttpRequest(`https://bzst2.colabo.com/api/v1/search_box/`, headers, jsonFormData); // Uses JSON Placeholder
+    const response = await fetchService.performPostHttpRequest(`https://baku.colabo.com/api/v1/search_box?limit=5&field=name&field=score&field=model&field=image_urls`, headers, jsonFormData); // Uses JSON Placeholder
     console.log(response);
     // 2.5 Inform user of result
     if(response) {
